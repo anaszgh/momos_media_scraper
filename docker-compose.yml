@@ -1,0 +1,29 @@
+services:
+  db:
+    image: 'postgres'
+    container_name: web_scraper_database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=P@ssw0rd
+      - POSTGRES_DB=web_scraper
+    ports:
+      - "5432:5432"
+  backend:
+    image:  'scraper_backend'
+    links:
+      - "db:database"
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+  front_end:
+    image:  'scraper_front_end'
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+  scraper_service:
+    image:  'scraper_service'
+    links:
+      - "db:database"
+  

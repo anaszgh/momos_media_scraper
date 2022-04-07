@@ -1,0 +1,22 @@
+td{
+    width: 25%;
+}
+td > a{
+    max-width: 20vw;
+    overflow-wrap: anywhere;
+}
+img{
+    max-width: 250px;
+    max-height: 250px;
+}
+.btn-primary{
+    height: 40px !important;
+    width: 80px !important;
+}
+.quick-filters{
+    display: flex;
+    justify-content: space-evenly;
+}
+.form-control{
+    height: 40px !important;
+}
